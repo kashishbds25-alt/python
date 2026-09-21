@@ -1,0 +1,94 @@
+# Simple Chatbot using Python
+
+def get_response(user_input):
+    user_input = user_input.lower().strip()
+
+    # General Conversation
+    if user_input in ["hi", "hello", "hey"]:
+        return "Hello! How can I help you today?"
+
+    elif user_input == "how are you":
+        return "I am doing great! Thank you for asking."
+
+    elif user_input in ["who are you", "what are you"]:
+        return "I am a simple chatbot developed using Python."
+
+    elif user_input == "what can you do":
+        return "I can answer general and student-related questions."
+
+    elif user_input in ["thank you", "thanks"]:
+        return "You're welcome! All the best with your studies."
+
+    elif user_input in ["bye", "goodbye"]:
+        return "Goodbye! Have a great day!"
+
+    # Student and College Related
+    elif user_input == "what is data science":
+        return ("Data Science is a field that uses data, programming, "
+                "statistics and analytical methods to find useful insights from data.")
+
+    elif user_input == "what is a project":
+        return ("A project is a practical task where students apply their "
+                "knowledge to solve a particular problem.")
+
+    elif user_input == "how should i prepare for exams":
+        return ("Revise important concepts, practice questions, manage your "
+                "time and stay confident.")
+
+    elif user_input == "what is python":
+        return ("Python is a popular programming language known for its simple "
+                "syntax and wide range of applications.")
+
+    elif user_input == "what is dsa":
+        return ("DSA stands for Data Structures and Algorithms. It helps in "
+                "organizing data and solving problems efficiently.")
+
+    elif user_input == "what is github":
+        return ("GitHub is a platform used to store, manage and collaborate "
+                "on software projects.")
+
+    # Student Conversation
+    elif user_input == "i have an exam tomorrow":
+        return ("All the best! Revise important concepts, practice questions, "
+                "and stay confident.")
+
+    elif user_input == "i need help with my project":
+        return ("Start by understanding the problem, defining objectives, "
+                "planning the solution, and then implementing it.")
+
+    elif user_input == "i am learning python":
+        return ("That's great! Practice Python regularly and focus on basics, "
+                "functions, data structures, and problem solving.")
+
+    elif user_input == "i am stressed about exams":
+        return ("Take a short break, make a simple study plan, and focus on "
+                "one topic at a time.")
+
+    # Unknown Input
+    else:
+        return ("Sorry, I don't understand that question. "
+                "Please try another general or student-related question.")
+
+
+def main():
+    print("===================================")
+    print("          SIMPLE CHATBOT")
+    print("===================================")
+    print("You can ask general or student-related questions.")
+    print("Type 'exit' to end the conversation.\n")
+
+    while True:
+        user_input = input("You: ")
+
+        # Exit condition
+        if user_input.lower().strip() == "exit":
+            print("Bot: Goodbye! Have a great day!")
+            break
+
+        response = get_response(user_input)
+        print("Bot:", response)
+
+
+# Start the chatbot
+if __name__ == "__main__":
+    main()
